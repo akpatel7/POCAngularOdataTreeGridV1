@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="tradesApp">
+
+<head>
+
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('em-fast-dash');
+         </script>
+    <![endif]-->
+
+    <style>
+        .dash-box {
+            width: 150px;
+            float: left;
+            border: 1px solid blue;
+        }
+        .dash-box select {
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="dashController">
+
+        <em-fast-dash data="getData()" config="dashControllerConfig"></em-fast-dash>
+
+
+    </div>
+</body>
+
+
+<script src="/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="/Scripts/angular.min.js"></script>
+<script src="/Scripts/angular-resource.js"></script>
+
+<script src="/js/tradesApp.js"></script>
+
+<script src="/js/directives/emFastDash.js"></script>
+<script src="/js/controllers/dashController.js"></script>
+</html>
+

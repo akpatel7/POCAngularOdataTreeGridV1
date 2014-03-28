@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4731756889504340897724ebbbb5d827" Name="Diagram1">
+        <EntityTypeShape EntityType="BCATradeModel.Benchmark" Width="1.5" PointX="5.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Currency" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Hedge_Type" Width="1.5" PointX="8" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Instruction_Type" Width="1.5" PointX="8" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Length_Type" Width="1.5" PointX="5.75" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Location" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Measure_Type" Width="1.5" PointX="11" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Position" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Related_Trade" Width="1.5" PointX="10.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Relativity" Width="1.5" PointX="0.75" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Service" Width="1.5" PointX="5.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Status" Width="1.5" PointX="5.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Structure_Type" Width="1.5" PointX="5.75" PointY="21.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Track_Record" Width="1.5" PointX="13.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Track_Record_Type" Width="1.5" PointX="11" PointY="20.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Tradable_Thing" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Tradable_Thing_Class" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Trade" Width="1.5" PointX="8" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Trade_Comment" Width="1.5" PointX="10.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Trade_Instruction" Width="1.5" PointX="10.25" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Trade_Line" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Trade_Line_Group" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Trade_Line_Group_Type" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BCATradeModel.Trade_Performance" Width="1.5" PointX="13.25" PointY="6.75" IsExpanded="true" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Benchmark" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Performance_Benchmark" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Performance_Currency" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Instruction_Hedge_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Instruction_Instruction_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Length_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Tradable_Thing_Location" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Performance_Measure_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Position_Relativity" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Line_Position" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Related_Trade_Trade" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Related_Trade_Trade1" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Instruction_Relativity" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Relativity" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Structure_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Track_Record_Track_Record_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Track_Record_Trade" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Tradable_Thing_Tradable_Thing_Class" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Line_Tradable_Thing" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Comment_Trade" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Instruction_Trade" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Line_Trade" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Performance_Trade" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Line_Trade_Line_Group" ManuallyRouted="false" />
+        <AssociationConnector Association="BCATradeModel.FK_Trade_Line_Group_Trade_Line_Group_Type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

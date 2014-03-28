@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="tradesApp">
+
+<head>
+
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('em-fast-dash-with-custom-angular-binding');
+         </script>
+    <![endif]-->
+
+    <style>
+        .dash-box {
+            width: 150px;
+            float: left;
+            border: 1px solid blue;
+        }
+        .dash-box select {
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="dashController">
+        
+        All 3000 combo boxes watching this...<input type="checkbox" ng-model="showIt" />
+        <br/>
+        <p>This test uses element.append($compile($html)(scope)) to compile all 3000 ng-show="showIt" in one go. The result is about 12 secs for the compile and render. The runtime is fast.</p>
+        <em-fast-dash-with-custom-angular-binding showit="showIt" combochanged="comboChanged" data="getData()" config="dashControllerConfig"></em-fast-dash-with-custom-angular-binding>
+
+
+    </div>
+</body>
+
+
+<script src="/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="/Scripts/angular.min.js"></script>
+<script src="/Scripts/angular-resource.js"></script>
+
+<script src="/js/tradesApp.js"></script>
+
+<script src="/js/directives/emFastDashWithCustomAngularBinding.js"></script>
+<script src="/js/controllers/dashController.js"></script>
+</html>
+

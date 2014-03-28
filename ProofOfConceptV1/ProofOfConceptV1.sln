@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuromoneyArchitecturePoc", "EuromoneyArchitecturePoc\EuromoneyArchitecturePoc.csproj", "{DF62B725-A7DF-4FC2-94C6-84B6749DF5DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuromoneyArchitecturePoc.Tests", "EuromoneyArchitecturePoc.Tests\EuromoneyArchitecturePoc.Tests.csproj", "{3A90CC09-C874-4DAD-8641-B8583D53CCF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuromoneyBca.Domain.Allocations", "EuromoneyBca.Domain.Allocations\EuromoneyBca.Domain.Allocations.csproj", "{EC0CF0D0-094A-47FC-A5CD-EBA8F3529C32}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TradesDataImporter", "TradesDataImporter\TradesDataImporter.csproj", "{611E7181-39E9-49CB-B328-BF3445DEC507}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuromoneyBca.Domain", "EuromoneyBca.Domain\EuromoneyBca.Domain.csproj", "{7AC4A528-C39C-4D82-A517-34CAFC676B7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF62B725-A7DF-4FC2-94C6-84B6749DF5DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF62B725-A7DF-4FC2-94C6-84B6749DF5DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF62B725-A7DF-4FC2-94C6-84B6749DF5DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF62B725-A7DF-4FC2-94C6-84B6749DF5DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A90CC09-C874-4DAD-8641-B8583D53CCF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A90CC09-C874-4DAD-8641-B8583D53CCF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A90CC09-C874-4DAD-8641-B8583D53CCF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A90CC09-C874-4DAD-8641-B8583D53CCF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC0CF0D0-094A-47FC-A5CD-EBA8F3529C32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC0CF0D0-094A-47FC-A5CD-EBA8F3529C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC0CF0D0-094A-47FC-A5CD-EBA8F3529C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC0CF0D0-094A-47FC-A5CD-EBA8F3529C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{611E7181-39E9-49CB-B328-BF3445DEC507}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{611E7181-39E9-49CB-B328-BF3445DEC507}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{611E7181-39E9-49CB-B328-BF3445DEC507}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{611E7181-39E9-49CB-B328-BF3445DEC507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AC4A528-C39C-4D82-A517-34CAFC676B7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AC4A528-C39C-4D82-A517-34CAFC676B7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AC4A528-C39C-4D82-A517-34CAFC676B7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AC4A528-C39C-4D82-A517-34CAFC676B7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

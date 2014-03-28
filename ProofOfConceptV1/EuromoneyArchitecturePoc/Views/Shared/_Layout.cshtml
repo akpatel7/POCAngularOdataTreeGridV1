@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - T & A Architecture POCs</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header class="euromoney-header">
+        <div class="content-wrapper clear-fix">
+            <div class="euromoney-page-title">
+                <div>T & A Architecture - Proof of Concept Site</div>
+                <h1>@ViewBag.Title</h1>
+            </div>
+            <section id="login">
+                <div class="em-login-and-nav">
+                    <div id="login">
+                        @Html.Partial("_LoginPartial")
+                    </div>
+                </div>
+            </section>
+        </div>
+    </header>
+    <div id="body">
+
+        <section class="content-wrapper main-content clear-fix">
+            <nav class="em-menu">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("TreeGrid POC 1.1", "Demo1", "TreeGridDemo")</li>
+                    <li>@Html.ActionLink("Angular Performance Tests", "AngularPerformanceTests", "Poc")</li>
+                    <li>@Html.ActionLink("OData Examples", "OdataExamples", "Poc")</li>
+                    <li>@Html.ActionLink("Download this code", "DownloadCode", "Poc")</li>
+                </ul>
+            </nav>
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p>&copy; @DateTime.Now.Year - Euromoney Plc</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

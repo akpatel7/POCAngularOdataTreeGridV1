@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Odata Examples";
+}
+
+<h1>Odata Examples</h1>
+<ul>
+    <li><a href="/odata">Entities (/odata)</a></li>
+    <li><a href="/odata/$metadata">Meta-data (/odata/$metadata)</a></li>
+</ul>
+<h2>These queries will require you to be authenticated, just login from the home page.</h2>
+<ul>
+    <li><a href="/odata/Portfolios?$top=10">Top 10 Portfolios (/odata/Portfolios?$top=10)</a></li>
+    <li><a href="/odata/PortfolioSummaries?$expand=AllocationSummaries">Portfolio Summaries with their Allocation Summaries (/odata/PortfolioSummaries?$expand=AllocationSummaries)</a></li>
+</ul>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="tradesApp">
+
+<head>
+
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('em-fast-dash-with-custom-angular-binding');
+         </script>
+    <![endif]-->
+
+    <style>
+        .dash-box {
+            width: 150px;
+            float: left;
+            border: 1px solid blue;
+        }
+        .dash-box select {
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="dashController">
+        
+        All 3000 combo boxes watching this...<input type="checkbox" ng-model="showIt" />
+        <br/>
+        <p>This test uses scope.$watch on all 3000 combo boxes and some jquery to change the visibility - it takes about 3 seconds to render and the runtime is fast</p>
+        <em-fast-dash-with-custom-angular-binding showit="showIt" combochanged="comboChanged" data="getData()" config="dashControllerConfig"></em-fast-dash-with-custom-angular-binding>
+
+
+    </div>
+</body>
+
+
+<script src="/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="/Scripts/angular.min.js"></script>
+<script src="/Scripts/angular-resource.js"></script>
+
+<script src="/js/tradesApp.js"></script>
+
+<script src="/js/directives/emFastDashWithCustomAngularBindingV2.js"></script>
+<script src="/js/controllers/dashController.js"></script>
+</html>
+

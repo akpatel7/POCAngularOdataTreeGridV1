@@ -1,0 +1,1797 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BCATradeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="BCATradeModelStoreContainer">
+          <EntitySet Name="Benchmark" EntityType="BCATradeModel.Store.Benchmark" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Currency" EntityType="BCATradeModel.Store.Currency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Hedge_Type" EntityType="BCATradeModel.Store.Hedge_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Instruction_Type" EntityType="BCATradeModel.Store.Instruction_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Length_Type" EntityType="BCATradeModel.Store.Length_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Location" EntityType="BCATradeModel.Store.Location" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Measure_Type" EntityType="BCATradeModel.Store.Measure_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Position" EntityType="BCATradeModel.Store.Position" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Related_Trade" EntityType="BCATradeModel.Store.Related_Trade" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Relativity" EntityType="BCATradeModel.Store.Relativity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Service" EntityType="BCATradeModel.Store.Service" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Status" EntityType="BCATradeModel.Store.Status" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Structure_Type" EntityType="BCATradeModel.Store.Structure_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Track_Record" EntityType="BCATradeModel.Store.Track_Record" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Track_Record_Type" EntityType="BCATradeModel.Store.Track_Record_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tradable_Thing" EntityType="BCATradeModel.Store.Tradable_Thing" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tradable_Thing_Class" EntityType="BCATradeModel.Store.Tradable_Thing_Class" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trade" EntityType="BCATradeModel.Store.Trade" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trade_Comment" EntityType="BCATradeModel.Store.Trade_Comment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trade_Instruction" EntityType="BCATradeModel.Store.Trade_Instruction" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trade_Line" EntityType="BCATradeModel.Store.Trade_Line" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trade_Line_Group" EntityType="BCATradeModel.Store.Trade_Line_Group" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trade_Line_Group_Type" EntityType="BCATradeModel.Store.Trade_Line_Group_Type" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Trade_Performance" EntityType="BCATradeModel.Store.Trade_Performance" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Position_Relativity" Association="BCATradeModel.Store.FK_Position_Relativity">
+            <End Role="Relativity" EntitySet="Relativity" />
+            <End Role="Position" EntitySet="Position" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Related_Trade_Trade" Association="BCATradeModel.Store.FK_Related_Trade_Trade">
+            <End Role="Trade" EntitySet="Trade" />
+            <End Role="Related_Trade" EntitySet="Related_Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Related_Trade_Trade1" Association="BCATradeModel.Store.FK_Related_Trade_Trade1">
+            <End Role="Trade" EntitySet="Trade" />
+            <End Role="Related_Trade" EntitySet="Related_Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Track_Record_Track_Record_Type" Association="BCATradeModel.Store.FK_Track_Record_Track_Record_Type">
+            <End Role="Track_Record_Type" EntitySet="Track_Record_Type" />
+            <End Role="Track_Record" EntitySet="Track_Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Track_Record_Trade" Association="BCATradeModel.Store.FK_Track_Record_Trade">
+            <End Role="Trade" EntitySet="Trade" />
+            <End Role="Track_Record" EntitySet="Track_Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tradable_Thing_Location" Association="BCATradeModel.Store.FK_Tradable_Thing_Location">
+            <End Role="Location" EntitySet="Location" />
+            <End Role="Tradable_Thing" EntitySet="Tradable_Thing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tradable_Thing_Tradable_Thing_Class" Association="BCATradeModel.Store.FK_Tradable_Thing_Tradable_Thing_Class">
+            <End Role="Tradable_Thing_Class" EntitySet="Tradable_Thing_Class" />
+            <End Role="Tradable_Thing" EntitySet="Tradable_Thing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Benchmark" Association="BCATradeModel.Store.FK_Trade_Benchmark">
+            <End Role="Benchmark" EntitySet="Benchmark" />
+            <End Role="Trade" EntitySet="Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Comment_Trade" Association="BCATradeModel.Store.FK_Trade_Comment_Trade">
+            <End Role="Trade" EntitySet="Trade" />
+            <End Role="Trade_Comment" EntitySet="Trade_Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Currency" Association="BCATradeModel.Store.FK_Trade_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Trade" EntitySet="Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Hedge_Type" Association="BCATradeModel.Store.FK_Trade_Instruction_Hedge_Type">
+            <End Role="Hedge_Type" EntitySet="Hedge_Type" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Instruction_Type" Association="BCATradeModel.Store.FK_Trade_Instruction_Instruction_Type">
+            <End Role="Instruction_Type" EntitySet="Instruction_Type" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Relativity" Association="BCATradeModel.Store.FK_Trade_Instruction_Relativity">
+            <End Role="Relativity" EntitySet="Relativity" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Trade" Association="BCATradeModel.Store.FK_Trade_Instruction_Trade">
+            <End Role="Trade" EntitySet="Trade" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Length_Type" Association="BCATradeModel.Store.FK_Trade_Length_Type">
+            <End Role="Length_Type" EntitySet="Length_Type" />
+            <End Role="Trade" EntitySet="Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Group_Trade_Line_Group_Type" Association="BCATradeModel.Store.FK_Trade_Line_Group_Trade_Line_Group_Type">
+            <End Role="Trade_Line_Group_Type" EntitySet="Trade_Line_Group_Type" />
+            <End Role="Trade_Line_Group" EntitySet="Trade_Line_Group" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Position" Association="BCATradeModel.Store.FK_Trade_Line_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Tradable_Thing" Association="BCATradeModel.Store.FK_Trade_Line_Tradable_Thing">
+            <End Role="Tradable_Thing" EntitySet="Tradable_Thing" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Trade" Association="BCATradeModel.Store.FK_Trade_Line_Trade">
+            <End Role="Trade" EntitySet="Trade" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Trade_Line_Group" Association="BCATradeModel.Store.FK_Trade_Line_Trade_Line_Group">
+            <End Role="Trade_Line_Group" EntitySet="Trade_Line_Group" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Benchmark" Association="BCATradeModel.Store.FK_Trade_Performance_Benchmark">
+            <End Role="Benchmark" EntitySet="Benchmark" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Currency" Association="BCATradeModel.Store.FK_Trade_Performance_Currency">
+            <End Role="Currency" EntitySet="Currency" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Measure_Type" Association="BCATradeModel.Store.FK_Trade_Performance_Measure_Type">
+            <End Role="Measure_Type" EntitySet="Measure_Type" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Trade" Association="BCATradeModel.Store.FK_Trade_Performance_Trade">
+            <End Role="Trade" EntitySet="Trade" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Relativity" Association="BCATradeModel.Store.FK_Trade_Relativity">
+            <End Role="Relativity" EntitySet="Relativity" />
+            <End Role="Trade" EntitySet="Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Service" Association="BCATradeModel.Store.FK_Trade_Service">
+            <End Role="Service" EntitySet="Service" />
+            <End Role="Trade" EntitySet="Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Status" Association="BCATradeModel.Store.FK_Trade_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Trade" EntitySet="Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Structure_Type" Association="BCATradeModel.Store.FK_Trade_Structure_Type">
+            <End Role="Structure_Type" EntitySet="Structure_Type" />
+            <End Role="Trade" EntitySet="Trade" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Benchmark">
+          <Key>
+            <PropertyRef Name="benchmark_id" />
+          </Key>
+          <Property Name="benchmark_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="benchmark_uri" Type="varchar" MaxLength="255" />
+          <Property Name="benchmark_code" Type="varchar" MaxLength="50" />
+          <Property Name="benchmark_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="currency_id" />
+          </Key>
+          <Property Name="currency_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="currency_uri" Type="varchar" MaxLength="255" />
+          <Property Name="currency_code" Type="varchar" MaxLength="50" />
+          <Property Name="currency_symbol" Type="varchar" MaxLength="50" />
+          <Property Name="currency_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Hedge_Type">
+          <Key>
+            <PropertyRef Name="hedge_id" />
+          </Key>
+          <Property Name="hedge_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="hedge_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Instruction_Type">
+          <Key>
+            <PropertyRef Name="instruction_type_id" />
+          </Key>
+          <Property Name="instruction_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="instruction_type_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Length_Type">
+          <Key>
+            <PropertyRef Name="length_type_id" />
+          </Key>
+          <Property Name="length_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="length_type_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="location_uri" Type="varchar" MaxLength="255" />
+          <Property Name="location_code" Type="varchar" MaxLength="255" />
+          <Property Name="location_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Measure_Type">
+          <Key>
+            <PropertyRef Name="measure_type_id" />
+          </Key>
+          <Property Name="measure_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="measure_type_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="position_uri" Type="varchar" MaxLength="255" />
+          <Property Name="position_label" Type="varchar" MaxLength="255" />
+          <Property Name="position_relativity_id" Type="int" />
+        </EntityType>
+        <EntityType Name="Related_Trade">
+          <Key>
+            <PropertyRef Name="trade_id" />
+            <PropertyRef Name="related_trade_id" />
+          </Key>
+          <Property Name="trade_id" Type="int" Nullable="false" />
+          <Property Name="related_trade_id" Type="int" Nullable="false" />
+          <Property Name="created_on" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="last_updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Relativity">
+          <Key>
+            <PropertyRef Name="relativity_id" />
+          </Key>
+          <Property Name="relativity_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="relativity_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="service_uri" Type="varchar" MaxLength="255" />
+          <Property Name="service_code" Type="varchar" MaxLength="50" />
+          <Property Name="service_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="status_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Structure_Type">
+          <Key>
+            <PropertyRef Name="structure_type_id" />
+          </Key>
+          <Property Name="structure_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="structure_type_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Track_Record">
+          <Key>
+            <PropertyRef Name="track_record_id" />
+          </Key>
+          <Property Name="track_record_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="int" />
+          <Property Name="track_record_type_id" Type="int" />
+          <Property Name="track_record_value" Type="decimal" Scale="5" />
+          <Property Name="track_record_date" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="last_updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Track_Record_Type">
+          <Key>
+            <PropertyRef Name="track_record_type_id" />
+          </Key>
+          <Property Name="track_record_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="track_record_type_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tradable_Thing">
+          <Key>
+            <PropertyRef Name="tradable_thing_id" />
+          </Key>
+          <Property Name="tradable_thing_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tradable_thing_uri" Type="varchar" MaxLength="255" />
+          <Property Name="tradable_thing_class_id" Type="int" />
+          <Property Name="location_id" Type="int" />
+          <Property Name="tradable_thing_code" Type="varchar" MaxLength="255" />
+          <Property Name="tradable_thing_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Tradable_Thing_Class">
+          <Key>
+            <PropertyRef Name="tradable_thing_class_id" />
+          </Key>
+          <Property Name="tradable_thing_class_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="tradable_thing_class_uri" Type="varchar" MaxLength="255" />
+          <Property Name="tradable_thing_class_label" Type="varchar" MaxLength="255" />
+          <Property Name="tradable_thing_class_editorial_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Trade">
+          <Key>
+            <PropertyRef Name="trade_id" />
+          </Key>
+          <Property Name="trade_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_uri" Type="varchar" MaxLength="255" />
+          <Property Name="relativity_id" Type="int" />
+          <Property Name="length_type_id" Type="int" />
+          <Property Name="structure_type_id" Type="int" />
+          <Property Name="service_id" Type="int" />
+          <Property Name="currency_id" Type="int" />
+          <Property Name="benchmark_id" Type="int" />
+          <Property Name="trade_label" Type="varchar" MaxLength="255" />
+          <Property Name="trade_editorial_label" Type="varchar" MaxLength="255" />
+          <Property Name="created_on" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="last_updated" Type="datetime" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="Trade_Comment">
+          <Key>
+            <PropertyRef Name="comment_id" />
+          </Key>
+          <Property Name="comment_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="int" />
+          <Property Name="comment_label" Type="varchar" MaxLength="255" />
+          <Property Name="created_on" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="last_updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Trade_Instruction">
+          <Key>
+            <PropertyRef Name="trade_instruction_id" />
+          </Key>
+          <Property Name="trade_instruction_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="int" />
+          <Property Name="relativity_id" Type="int" />
+          <Property Name="instruction_type_id" Type="int" />
+          <Property Name="hedge_id" Type="int" />
+          <Property Name="instruction_entry" Type="decimal" Scale="5" />
+          <Property Name="instruction_entry_date" Type="datetime" />
+          <Property Name="instruction_exit" Type="decimal" Scale="5" />
+          <Property Name="instruction_exit_date" Type="datetime" />
+          <Property Name="instruction_label" Type="varchar" MaxLength="255" />
+          <Property Name="created_on" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="last_updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Trade_Line">
+          <Key>
+            <PropertyRef Name="trade_line_id" />
+          </Key>
+          <Property Name="trade_line_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_line_uri" Type="varchar" MaxLength="255" />
+          <Property Name="trade_id" Type="int" />
+          <Property Name="trade_line_group_id" Type="int" />
+          <Property Name="tradable_thing_id" Type="int" />
+          <Property Name="position_id" Type="int" />
+          <Property Name="trade_line_label" Type="varchar" MaxLength="255" />
+          <Property Name="trade_line_editorial_label" Type="varchar" MaxLength="255" />
+          <Property Name="created_on" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="last_updated" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Trade_Line_Group">
+          <Key>
+            <PropertyRef Name="trade_line_group_id" />
+          </Key>
+          <Property Name="trade_line_group_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_line_group_type_id" Type="int" />
+          <Property Name="trade_line_group_uri" Type="varchar" MaxLength="255" />
+          <Property Name="trade_line_group_label" Type="varchar" MaxLength="255" />
+          <Property Name="trade_line_group_editorial_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Trade_Line_Group_Type">
+          <Key>
+            <PropertyRef Name="trade_line_group_type_id" />
+          </Key>
+          <Property Name="trade_line_group_type_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_line_group_type_uri" Type="varchar" MaxLength="255" />
+          <Property Name="trade_line_group_type_label" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Trade_Performance">
+          <Key>
+            <PropertyRef Name="trade_performance_id" />
+          </Key>
+          <Property Name="trade_performance_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="int" />
+          <Property Name="measure_type_id" Type="int" />
+          <Property Name="return_apl_function" Type="varchar" MaxLength="255" />
+          <Property Name="return_currency_id" Type="int" />
+          <Property Name="return_benchmark_id" Type="int" />
+          <Property Name="return_value" Type="varchar" MaxLength="255" />
+          <Property Name="return_date" Type="datetime" />
+          <Property Name="created_on" Type="datetime" />
+          <Property Name="created_by" Type="int" />
+          <Property Name="last_updated" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Position_Relativity">
+          <End Role="Relativity" Type="BCATradeModel.Store.Relativity" Multiplicity="0..1" />
+          <End Role="Position" Type="BCATradeModel.Store.Position" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relativity">
+              <PropertyRef Name="relativity_id" />
+            </Principal>
+            <Dependent Role="Position">
+              <PropertyRef Name="position_relativity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Related_Trade_Trade">
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="1" />
+          <End Role="Related_Trade" Type="BCATradeModel.Store.Related_Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Related_Trade">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Related_Trade_Trade1">
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="1" />
+          <End Role="Related_Trade" Type="BCATradeModel.Store.Related_Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Related_Trade">
+              <PropertyRef Name="related_trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Track_Record_Track_Record_Type">
+          <End Role="Track_Record_Type" Type="BCATradeModel.Store.Track_Record_Type" Multiplicity="0..1" />
+          <End Role="Track_Record" Type="BCATradeModel.Store.Track_Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Track_Record_Type">
+              <PropertyRef Name="track_record_type_id" />
+            </Principal>
+            <Dependent Role="Track_Record">
+              <PropertyRef Name="track_record_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Track_Record_Trade">
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="0..1" />
+          <End Role="Track_Record" Type="BCATradeModel.Store.Track_Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Track_Record">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tradable_Thing_Location">
+          <End Role="Location" Type="BCATradeModel.Store.Location" Multiplicity="0..1" />
+          <End Role="Tradable_Thing" Type="BCATradeModel.Store.Tradable_Thing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="location_id" />
+            </Principal>
+            <Dependent Role="Tradable_Thing">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tradable_Thing_Tradable_Thing_Class">
+          <End Role="Tradable_Thing_Class" Type="BCATradeModel.Store.Tradable_Thing_Class" Multiplicity="0..1" />
+          <End Role="Tradable_Thing" Type="BCATradeModel.Store.Tradable_Thing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tradable_Thing_Class">
+              <PropertyRef Name="tradable_thing_class_id" />
+            </Principal>
+            <Dependent Role="Tradable_Thing">
+              <PropertyRef Name="tradable_thing_class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Benchmark">
+          <End Role="Benchmark" Type="BCATradeModel.Store.Benchmark" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benchmark">
+              <PropertyRef Name="benchmark_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="benchmark_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Comment_Trade">
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Comment" Type="BCATradeModel.Store.Trade_Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Comment">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Currency">
+          <End Role="Currency" Type="BCATradeModel.Store.Currency" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="currency_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="currency_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Hedge_Type">
+          <End Role="Hedge_Type" Type="BCATradeModel.Store.Hedge_Type" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Store.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hedge_Type">
+              <PropertyRef Name="hedge_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="hedge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Instruction_Type">
+          <End Role="Instruction_Type" Type="BCATradeModel.Store.Instruction_Type" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Store.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instruction_Type">
+              <PropertyRef Name="instruction_type_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="instruction_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Relativity">
+          <End Role="Relativity" Type="BCATradeModel.Store.Relativity" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Store.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relativity">
+              <PropertyRef Name="relativity_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="relativity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Trade">
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Store.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Length_Type">
+          <End Role="Length_Type" Type="BCATradeModel.Store.Length_Type" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Length_Type">
+              <PropertyRef Name="length_type_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="length_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Group_Trade_Line_Group_Type">
+          <End Role="Trade_Line_Group_Type" Type="BCATradeModel.Store.Trade_Line_Group_Type" Multiplicity="0..1" />
+          <End Role="Trade_Line_Group" Type="BCATradeModel.Store.Trade_Line_Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade_Line_Group_Type">
+              <PropertyRef Name="trade_line_group_type_id" />
+            </Principal>
+            <Dependent Role="Trade_Line_Group">
+              <PropertyRef Name="trade_line_group_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Position">
+          <End Role="Position" Type="BCATradeModel.Store.Position" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Store.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="position_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Tradable_Thing">
+          <End Role="Tradable_Thing" Type="BCATradeModel.Store.Tradable_Thing" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Store.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tradable_Thing">
+              <PropertyRef Name="tradable_thing_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="tradable_thing_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Trade">
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Store.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Trade_Line_Group">
+          <End Role="Trade_Line_Group" Type="BCATradeModel.Store.Trade_Line_Group" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Store.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade_Line_Group">
+              <PropertyRef Name="trade_line_group_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="trade_line_group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Benchmark">
+          <End Role="Benchmark" Type="BCATradeModel.Store.Benchmark" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Store.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benchmark">
+              <PropertyRef Name="benchmark_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="return_benchmark_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Currency">
+          <End Role="Currency" Type="BCATradeModel.Store.Currency" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Store.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="currency_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="return_currency_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Measure_Type">
+          <End Role="Measure_Type" Type="BCATradeModel.Store.Measure_Type" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Store.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Measure_Type">
+              <PropertyRef Name="measure_type_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="measure_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Trade">
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Store.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Relativity">
+          <End Role="Relativity" Type="BCATradeModel.Store.Relativity" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relativity">
+              <PropertyRef Name="relativity_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="relativity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Service">
+          <End Role="Service" Type="BCATradeModel.Store.Service" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="service_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Status">
+          <End Role="Status" Type="BCATradeModel.Store.Status" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Structure_Type">
+          <End Role="Structure_Type" Type="BCATradeModel.Store.Structure_Type" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Store.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure_Type">
+              <PropertyRef Name="structure_type_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="structure_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BCATradeModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BCATradeEntities1" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Benchmarks" EntityType="BCATradeModel.Benchmark" />
+          <EntitySet Name="Currencies" EntityType="BCATradeModel.Currency" />
+          <EntitySet Name="Hedge_Type" EntityType="BCATradeModel.Hedge_Type" />
+          <EntitySet Name="Instruction_Type" EntityType="BCATradeModel.Instruction_Type" />
+          <EntitySet Name="Length_Type" EntityType="BCATradeModel.Length_Type" />
+          <EntitySet Name="Locations" EntityType="BCATradeModel.Location" />
+          <EntitySet Name="Measure_Type" EntityType="BCATradeModel.Measure_Type" />
+          <EntitySet Name="Positions" EntityType="BCATradeModel.Position" />
+          <EntitySet Name="Related_Trade" EntityType="BCATradeModel.Related_Trade" />
+          <EntitySet Name="Relativities" EntityType="BCATradeModel.Relativity" />
+          <EntitySet Name="Services" EntityType="BCATradeModel.Service" />
+          <EntitySet Name="Status" EntityType="BCATradeModel.Status" />
+          <EntitySet Name="Structure_Type" EntityType="BCATradeModel.Structure_Type" />
+          <EntitySet Name="Track_Record" EntityType="BCATradeModel.Track_Record" />
+          <EntitySet Name="Track_Record_Type" EntityType="BCATradeModel.Track_Record_Type" />
+          <EntitySet Name="Tradable_Thing" EntityType="BCATradeModel.Tradable_Thing" />
+          <EntitySet Name="Tradable_Thing_Class" EntityType="BCATradeModel.Tradable_Thing_Class" />
+          <EntitySet Name="Trades" EntityType="BCATradeModel.Trade" />
+          <EntitySet Name="Trade_Comment" EntityType="BCATradeModel.Trade_Comment" />
+          <EntitySet Name="Trade_Instruction" EntityType="BCATradeModel.Trade_Instruction" />
+          <EntitySet Name="Trade_Line" EntityType="BCATradeModel.Trade_Line" />
+          <EntitySet Name="Trade_Line_Group" EntityType="BCATradeModel.Trade_Line_Group" />
+          <EntitySet Name="Trade_Line_Group_Type" EntityType="BCATradeModel.Trade_Line_Group_Type" />
+          <EntitySet Name="Trade_Performance" EntityType="BCATradeModel.Trade_Performance" />
+          <AssociationSet Name="FK_Trade_Benchmark" Association="BCATradeModel.FK_Trade_Benchmark">
+            <End Role="Benchmark" EntitySet="Benchmarks" />
+            <End Role="Trade" EntitySet="Trades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Benchmark" Association="BCATradeModel.FK_Trade_Performance_Benchmark">
+            <End Role="Benchmark" EntitySet="Benchmarks" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Currency" Association="BCATradeModel.FK_Trade_Currency">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="Trade" EntitySet="Trades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Currency" Association="BCATradeModel.FK_Trade_Performance_Currency">
+            <End Role="Currency" EntitySet="Currencies" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Hedge_Type" Association="BCATradeModel.FK_Trade_Instruction_Hedge_Type">
+            <End Role="Hedge_Type" EntitySet="Hedge_Type" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Instruction_Type" Association="BCATradeModel.FK_Trade_Instruction_Instruction_Type">
+            <End Role="Instruction_Type" EntitySet="Instruction_Type" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Length_Type" Association="BCATradeModel.FK_Trade_Length_Type">
+            <End Role="Length_Type" EntitySet="Length_Type" />
+            <End Role="Trade" EntitySet="Trades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tradable_Thing_Location" Association="BCATradeModel.FK_Tradable_Thing_Location">
+            <End Role="Location" EntitySet="Locations" />
+            <End Role="Tradable_Thing" EntitySet="Tradable_Thing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Measure_Type" Association="BCATradeModel.FK_Trade_Performance_Measure_Type">
+            <End Role="Measure_Type" EntitySet="Measure_Type" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Position_Relativity" Association="BCATradeModel.FK_Position_Relativity">
+            <End Role="Relativity" EntitySet="Relativities" />
+            <End Role="Position" EntitySet="Positions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Position" Association="BCATradeModel.FK_Trade_Line_Position">
+            <End Role="Position" EntitySet="Positions" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Related_Trade_Trade" Association="BCATradeModel.FK_Related_Trade_Trade">
+            <End Role="Trade" EntitySet="Trades" />
+            <End Role="Related_Trade" EntitySet="Related_Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Related_Trade_Trade1" Association="BCATradeModel.FK_Related_Trade_Trade1">
+            <End Role="Trade" EntitySet="Trades" />
+            <End Role="Related_Trade" EntitySet="Related_Trade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Relativity" Association="BCATradeModel.FK_Trade_Instruction_Relativity">
+            <End Role="Relativity" EntitySet="Relativities" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Relativity" Association="BCATradeModel.FK_Trade_Relativity">
+            <End Role="Relativity" EntitySet="Relativities" />
+            <End Role="Trade" EntitySet="Trades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Service" Association="BCATradeModel.FK_Trade_Service">
+            <End Role="Service" EntitySet="Services" />
+            <End Role="Trade" EntitySet="Trades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Status" Association="BCATradeModel.FK_Trade_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Trade" EntitySet="Trades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Structure_Type" Association="BCATradeModel.FK_Trade_Structure_Type">
+            <End Role="Structure_Type" EntitySet="Structure_Type" />
+            <End Role="Trade" EntitySet="Trades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Track_Record_Track_Record_Type" Association="BCATradeModel.FK_Track_Record_Track_Record_Type">
+            <End Role="Track_Record_Type" EntitySet="Track_Record_Type" />
+            <End Role="Track_Record" EntitySet="Track_Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Track_Record_Trade" Association="BCATradeModel.FK_Track_Record_Trade">
+            <End Role="Trade" EntitySet="Trades" />
+            <End Role="Track_Record" EntitySet="Track_Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tradable_Thing_Tradable_Thing_Class" Association="BCATradeModel.FK_Tradable_Thing_Tradable_Thing_Class">
+            <End Role="Tradable_Thing_Class" EntitySet="Tradable_Thing_Class" />
+            <End Role="Tradable_Thing" EntitySet="Tradable_Thing" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Tradable_Thing" Association="BCATradeModel.FK_Trade_Line_Tradable_Thing">
+            <End Role="Tradable_Thing" EntitySet="Tradable_Thing" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Comment_Trade" Association="BCATradeModel.FK_Trade_Comment_Trade">
+            <End Role="Trade" EntitySet="Trades" />
+            <End Role="Trade_Comment" EntitySet="Trade_Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Instruction_Trade" Association="BCATradeModel.FK_Trade_Instruction_Trade">
+            <End Role="Trade" EntitySet="Trades" />
+            <End Role="Trade_Instruction" EntitySet="Trade_Instruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Trade" Association="BCATradeModel.FK_Trade_Line_Trade">
+            <End Role="Trade" EntitySet="Trades" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Performance_Trade" Association="BCATradeModel.FK_Trade_Performance_Trade">
+            <End Role="Trade" EntitySet="Trades" />
+            <End Role="Trade_Performance" EntitySet="Trade_Performance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Trade_Line_Group" Association="BCATradeModel.FK_Trade_Line_Trade_Line_Group">
+            <End Role="Trade_Line_Group" EntitySet="Trade_Line_Group" />
+            <End Role="Trade_Line" EntitySet="Trade_Line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Trade_Line_Group_Trade_Line_Group_Type" Association="BCATradeModel.FK_Trade_Line_Group_Trade_Line_Group_Type">
+            <End Role="Trade_Line_Group_Type" EntitySet="Trade_Line_Group_Type" />
+            <End Role="Trade_Line_Group" EntitySet="Trade_Line_Group" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Benchmark">
+          <Key>
+            <PropertyRef Name="benchmark_id" />
+          </Key>
+          <Property Name="benchmark_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="benchmark_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="benchmark_code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="benchmark_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trades" Relationship="BCATradeModel.FK_Trade_Benchmark" FromRole="Benchmark" ToRole="Trade" />
+          <NavigationProperty Name="Trade_Performance" Relationship="BCATradeModel.FK_Trade_Performance_Benchmark" FromRole="Benchmark" ToRole="Trade_Performance" />
+        </EntityType>
+        <EntityType Name="Currency">
+          <Key>
+            <PropertyRef Name="currency_id" />
+          </Key>
+          <Property Name="currency_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="currency_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="currency_code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="currency_symbol" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="currency_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trades" Relationship="BCATradeModel.FK_Trade_Currency" FromRole="Currency" ToRole="Trade" />
+          <NavigationProperty Name="Trade_Performance" Relationship="BCATradeModel.FK_Trade_Performance_Currency" FromRole="Currency" ToRole="Trade_Performance" />
+        </EntityType>
+        <EntityType Name="Hedge_Type">
+          <Key>
+            <PropertyRef Name="hedge_id" />
+          </Key>
+          <Property Name="hedge_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="hedge_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trade_Instruction" Relationship="BCATradeModel.FK_Trade_Instruction_Hedge_Type" FromRole="Hedge_Type" ToRole="Trade_Instruction" />
+        </EntityType>
+        <EntityType Name="Instruction_Type">
+          <Key>
+            <PropertyRef Name="instruction_type_id" />
+          </Key>
+          <Property Name="instruction_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="instruction_type_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trade_Instruction" Relationship="BCATradeModel.FK_Trade_Instruction_Instruction_Type" FromRole="Instruction_Type" ToRole="Trade_Instruction" />
+        </EntityType>
+        <EntityType Name="Length_Type">
+          <Key>
+            <PropertyRef Name="length_type_id" />
+          </Key>
+          <Property Name="length_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="length_type_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trades" Relationship="BCATradeModel.FK_Trade_Length_Type" FromRole="Length_Type" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="location_id" />
+          </Key>
+          <Property Name="location_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="location_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="location_code" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="location_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tradable_Thing" Relationship="BCATradeModel.FK_Tradable_Thing_Location" FromRole="Location" ToRole="Tradable_Thing" />
+        </EntityType>
+        <EntityType Name="Measure_Type">
+          <Key>
+            <PropertyRef Name="measure_type_id" />
+          </Key>
+          <Property Name="measure_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="measure_type_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trade_Performance" Relationship="BCATradeModel.FK_Trade_Performance_Measure_Type" FromRole="Measure_Type" ToRole="Trade_Performance" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="position_id" />
+          </Key>
+          <Property Name="position_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="position_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="position_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="position_relativity_id" Type="Int32" />
+          <NavigationProperty Name="Relativity" Relationship="BCATradeModel.FK_Position_Relativity" FromRole="Position" ToRole="Relativity" />
+          <NavigationProperty Name="Trade_Line" Relationship="BCATradeModel.FK_Trade_Line_Position" FromRole="Position" ToRole="Trade_Line" />
+        </EntityType>
+        <EntityType Name="Related_Trade">
+          <Key>
+            <PropertyRef Name="trade_id" />
+            <PropertyRef Name="related_trade_id" />
+          </Key>
+          <Property Name="trade_id" Type="Int32" Nullable="false" />
+          <Property Name="related_trade_id" Type="Int32" Nullable="false" />
+          <Property Name="created_on" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Trade" Relationship="BCATradeModel.FK_Related_Trade_Trade" FromRole="Related_Trade" ToRole="Trade" />
+          <NavigationProperty Name="Trade1" Relationship="BCATradeModel.FK_Related_Trade_Trade1" FromRole="Related_Trade" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Relativity">
+          <Key>
+            <PropertyRef Name="relativity_id" />
+          </Key>
+          <Property Name="relativity_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="relativity_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Positions" Relationship="BCATradeModel.FK_Position_Relativity" FromRole="Relativity" ToRole="Position" />
+          <NavigationProperty Name="Trade_Instruction" Relationship="BCATradeModel.FK_Trade_Instruction_Relativity" FromRole="Relativity" ToRole="Trade_Instruction" />
+          <NavigationProperty Name="Trades" Relationship="BCATradeModel.FK_Trade_Relativity" FromRole="Relativity" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Service">
+          <Key>
+            <PropertyRef Name="service_id" />
+          </Key>
+          <Property Name="service_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="service_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="service_code" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="service_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trades" Relationship="BCATradeModel.FK_Trade_Service" FromRole="Service" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="status_id" />
+          </Key>
+          <Property Name="status_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="status_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trades" Relationship="BCATradeModel.FK_Trade_Status" FromRole="Status" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Structure_Type">
+          <Key>
+            <PropertyRef Name="structure_type_id" />
+          </Key>
+          <Property Name="structure_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="structure_type_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trades" Relationship="BCATradeModel.FK_Trade_Structure_Type" FromRole="Structure_Type" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Track_Record">
+          <Key>
+            <PropertyRef Name="track_record_id" />
+          </Key>
+          <Property Name="track_record_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="Int32" />
+          <Property Name="track_record_type_id" Type="Int32" />
+          <Property Name="track_record_value" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="track_record_date" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Track_Record_Type" Relationship="BCATradeModel.FK_Track_Record_Track_Record_Type" FromRole="Track_Record" ToRole="Track_Record_Type" />
+          <NavigationProperty Name="Trade" Relationship="BCATradeModel.FK_Track_Record_Trade" FromRole="Track_Record" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Track_Record_Type">
+          <Key>
+            <PropertyRef Name="track_record_type_id" />
+          </Key>
+          <Property Name="track_record_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="track_record_type_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Track_Record" Relationship="BCATradeModel.FK_Track_Record_Track_Record_Type" FromRole="Track_Record_Type" ToRole="Track_Record" />
+        </EntityType>
+        <EntityType Name="Tradable_Thing">
+          <Key>
+            <PropertyRef Name="tradable_thing_id" />
+          </Key>
+          <Property Name="tradable_thing_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tradable_thing_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="tradable_thing_class_id" Type="Int32" />
+          <Property Name="location_id" Type="Int32" />
+          <Property Name="tradable_thing_code" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="tradable_thing_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Location" Relationship="BCATradeModel.FK_Tradable_Thing_Location" FromRole="Tradable_Thing" ToRole="Location" />
+          <NavigationProperty Name="Tradable_Thing_Class" Relationship="BCATradeModel.FK_Tradable_Thing_Tradable_Thing_Class" FromRole="Tradable_Thing" ToRole="Tradable_Thing_Class" />
+          <NavigationProperty Name="Trade_Line" Relationship="BCATradeModel.FK_Trade_Line_Tradable_Thing" FromRole="Tradable_Thing" ToRole="Trade_Line" />
+        </EntityType>
+        <EntityType Name="Tradable_Thing_Class">
+          <Key>
+            <PropertyRef Name="tradable_thing_class_id" />
+          </Key>
+          <Property Name="tradable_thing_class_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="tradable_thing_class_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="tradable_thing_class_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="tradable_thing_class_editorial_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Tradable_Thing" Relationship="BCATradeModel.FK_Tradable_Thing_Tradable_Thing_Class" FromRole="Tradable_Thing_Class" ToRole="Tradable_Thing" />
+        </EntityType>
+        <EntityType Name="Trade">
+          <Key>
+            <PropertyRef Name="trade_id" />
+          </Key>
+          <Property Name="trade_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="relativity_id" Type="Int32" />
+          <Property Name="length_type_id" Type="Int32" />
+          <Property Name="structure_type_id" Type="Int32" />
+          <Property Name="service_id" Type="Int32" />
+          <Property Name="currency_id" Type="Int32" />
+          <Property Name="benchmark_id" Type="Int32" />
+          <Property Name="trade_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="trade_editorial_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="created_on" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Int32" />
+          <NavigationProperty Name="Benchmark" Relationship="BCATradeModel.FK_Trade_Benchmark" FromRole="Trade" ToRole="Benchmark" />
+          <NavigationProperty Name="Currency" Relationship="BCATradeModel.FK_Trade_Currency" FromRole="Trade" ToRole="Currency" />
+          <NavigationProperty Name="Length_Type" Relationship="BCATradeModel.FK_Trade_Length_Type" FromRole="Trade" ToRole="Length_Type" />
+          <NavigationProperty Name="Related_Trade" Relationship="BCATradeModel.FK_Related_Trade_Trade" FromRole="Trade" ToRole="Related_Trade" />
+          <NavigationProperty Name="Related_Trade1" Relationship="BCATradeModel.FK_Related_Trade_Trade1" FromRole="Trade" ToRole="Related_Trade" />
+          <NavigationProperty Name="Relativity" Relationship="BCATradeModel.FK_Trade_Relativity" FromRole="Trade" ToRole="Relativity" />
+          <NavigationProperty Name="Service" Relationship="BCATradeModel.FK_Trade_Service" FromRole="Trade" ToRole="Service" />
+          <NavigationProperty Name="Status1" Relationship="BCATradeModel.FK_Trade_Status" FromRole="Trade" ToRole="Status" />
+          <NavigationProperty Name="Structure_Type" Relationship="BCATradeModel.FK_Trade_Structure_Type" FromRole="Trade" ToRole="Structure_Type" />
+          <NavigationProperty Name="Track_Record" Relationship="BCATradeModel.FK_Track_Record_Trade" FromRole="Trade" ToRole="Track_Record" />
+          <NavigationProperty Name="Trade_Comment" Relationship="BCATradeModel.FK_Trade_Comment_Trade" FromRole="Trade" ToRole="Trade_Comment" />
+          <NavigationProperty Name="Trade_Instruction" Relationship="BCATradeModel.FK_Trade_Instruction_Trade" FromRole="Trade" ToRole="Trade_Instruction" />
+          <NavigationProperty Name="Trade_Line" Relationship="BCATradeModel.FK_Trade_Line_Trade" FromRole="Trade" ToRole="Trade_Line" />
+          <NavigationProperty Name="Trade_Performance" Relationship="BCATradeModel.FK_Trade_Performance_Trade" FromRole="Trade" ToRole="Trade_Performance" />
+        </EntityType>
+        <EntityType Name="Trade_Comment">
+          <Key>
+            <PropertyRef Name="comment_id" />
+          </Key>
+          <Property Name="comment_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="Int32" />
+          <Property Name="comment_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="created_on" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Trade" Relationship="BCATradeModel.FK_Trade_Comment_Trade" FromRole="Trade_Comment" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Trade_Instruction">
+          <Key>
+            <PropertyRef Name="trade_instruction_id" />
+          </Key>
+          <Property Name="trade_instruction_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="Int32" />
+          <Property Name="relativity_id" Type="Int32" />
+          <Property Name="instruction_type_id" Type="Int32" />
+          <Property Name="hedge_id" Type="Int32" />
+          <Property Name="instruction_entry" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="instruction_entry_date" Type="DateTime" Precision="3" />
+          <Property Name="instruction_exit" Type="Decimal" Precision="18" Scale="5" />
+          <Property Name="instruction_exit_date" Type="DateTime" Precision="3" />
+          <Property Name="instruction_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="created_on" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Hedge_Type" Relationship="BCATradeModel.FK_Trade_Instruction_Hedge_Type" FromRole="Trade_Instruction" ToRole="Hedge_Type" />
+          <NavigationProperty Name="Instruction_Type" Relationship="BCATradeModel.FK_Trade_Instruction_Instruction_Type" FromRole="Trade_Instruction" ToRole="Instruction_Type" />
+          <NavigationProperty Name="Relativity" Relationship="BCATradeModel.FK_Trade_Instruction_Relativity" FromRole="Trade_Instruction" ToRole="Relativity" />
+          <NavigationProperty Name="Trade" Relationship="BCATradeModel.FK_Trade_Instruction_Trade" FromRole="Trade_Instruction" ToRole="Trade" />
+        </EntityType>
+        <EntityType Name="Trade_Line">
+          <Key>
+            <PropertyRef Name="trade_line_id" />
+          </Key>
+          <Property Name="trade_line_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_line_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="trade_id" Type="Int32" />
+          <Property Name="trade_line_group_id" Type="Int32" />
+          <Property Name="tradable_thing_id" Type="Int32" />
+          <Property Name="position_id" Type="Int32" />
+          <Property Name="trade_line_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="trade_line_editorial_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="created_on" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Position" Relationship="BCATradeModel.FK_Trade_Line_Position" FromRole="Trade_Line" ToRole="Position" />
+          <NavigationProperty Name="Tradable_Thing" Relationship="BCATradeModel.FK_Trade_Line_Tradable_Thing" FromRole="Trade_Line" ToRole="Tradable_Thing" />
+          <NavigationProperty Name="Trade" Relationship="BCATradeModel.FK_Trade_Line_Trade" FromRole="Trade_Line" ToRole="Trade" />
+          <NavigationProperty Name="Trade_Line_Group" Relationship="BCATradeModel.FK_Trade_Line_Trade_Line_Group" FromRole="Trade_Line" ToRole="Trade_Line_Group" />
+        </EntityType>
+        <EntityType Name="Trade_Line_Group">
+          <Key>
+            <PropertyRef Name="trade_line_group_id" />
+          </Key>
+          <Property Name="trade_line_group_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_line_group_type_id" Type="Int32" />
+          <Property Name="trade_line_group_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="trade_line_group_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="trade_line_group_editorial_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trade_Line" Relationship="BCATradeModel.FK_Trade_Line_Trade_Line_Group" FromRole="Trade_Line_Group" ToRole="Trade_Line" />
+          <NavigationProperty Name="Trade_Line_Group_Type" Relationship="BCATradeModel.FK_Trade_Line_Group_Trade_Line_Group_Type" FromRole="Trade_Line_Group" ToRole="Trade_Line_Group_Type" />
+        </EntityType>
+        <EntityType Name="Trade_Line_Group_Type">
+          <Key>
+            <PropertyRef Name="trade_line_group_type_id" />
+          </Key>
+          <Property Name="trade_line_group_type_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_line_group_type_uri" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="trade_line_group_type_label" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Trade_Line_Group" Relationship="BCATradeModel.FK_Trade_Line_Group_Trade_Line_Group_Type" FromRole="Trade_Line_Group_Type" ToRole="Trade_Line_Group" />
+        </EntityType>
+        <EntityType Name="Trade_Performance">
+          <Key>
+            <PropertyRef Name="trade_performance_id" />
+          </Key>
+          <Property Name="trade_performance_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="trade_id" Type="Int32" />
+          <Property Name="measure_type_id" Type="Int32" />
+          <Property Name="return_apl_function" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="return_currency_id" Type="Int32" />
+          <Property Name="return_benchmark_id" Type="Int32" />
+          <Property Name="return_value" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
+          <Property Name="return_date" Type="DateTime" Precision="3" />
+          <Property Name="created_on" Type="DateTime" Precision="3" />
+          <Property Name="created_by" Type="Int32" />
+          <Property Name="last_updated" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Benchmark" Relationship="BCATradeModel.FK_Trade_Performance_Benchmark" FromRole="Trade_Performance" ToRole="Benchmark" />
+          <NavigationProperty Name="Currency" Relationship="BCATradeModel.FK_Trade_Performance_Currency" FromRole="Trade_Performance" ToRole="Currency" />
+          <NavigationProperty Name="Measure_Type" Relationship="BCATradeModel.FK_Trade_Performance_Measure_Type" FromRole="Trade_Performance" ToRole="Measure_Type" />
+          <NavigationProperty Name="Trade" Relationship="BCATradeModel.FK_Trade_Performance_Trade" FromRole="Trade_Performance" ToRole="Trade" />
+        </EntityType>
+        <Association Name="FK_Trade_Benchmark">
+          <End Role="Benchmark" Type="BCATradeModel.Benchmark" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benchmark">
+              <PropertyRef Name="benchmark_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="benchmark_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Benchmark">
+          <End Role="Benchmark" Type="BCATradeModel.Benchmark" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Benchmark">
+              <PropertyRef Name="benchmark_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="return_benchmark_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Currency">
+          <End Role="Currency" Type="BCATradeModel.Currency" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="currency_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="currency_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Currency">
+          <End Role="Currency" Type="BCATradeModel.Currency" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Currency">
+              <PropertyRef Name="currency_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="return_currency_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Hedge_Type">
+          <End Role="Hedge_Type" Type="BCATradeModel.Hedge_Type" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hedge_Type">
+              <PropertyRef Name="hedge_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="hedge_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Instruction_Type">
+          <End Role="Instruction_Type" Type="BCATradeModel.Instruction_Type" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Instruction_Type">
+              <PropertyRef Name="instruction_type_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="instruction_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Length_Type">
+          <End Role="Length_Type" Type="BCATradeModel.Length_Type" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Length_Type">
+              <PropertyRef Name="length_type_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="length_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tradable_Thing_Location">
+          <End Role="Location" Type="BCATradeModel.Location" Multiplicity="0..1" />
+          <End Role="Tradable_Thing" Type="BCATradeModel.Tradable_Thing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Location">
+              <PropertyRef Name="location_id" />
+            </Principal>
+            <Dependent Role="Tradable_Thing">
+              <PropertyRef Name="location_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Measure_Type">
+          <End Role="Measure_Type" Type="BCATradeModel.Measure_Type" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Measure_Type">
+              <PropertyRef Name="measure_type_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="measure_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Position_Relativity">
+          <End Role="Relativity" Type="BCATradeModel.Relativity" Multiplicity="0..1" />
+          <End Role="Position" Type="BCATradeModel.Position" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relativity">
+              <PropertyRef Name="relativity_id" />
+            </Principal>
+            <Dependent Role="Position">
+              <PropertyRef Name="position_relativity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Position">
+          <End Role="Position" Type="BCATradeModel.Position" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="position_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="position_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Related_Trade_Trade">
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="1" />
+          <End Role="Related_Trade" Type="BCATradeModel.Related_Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Related_Trade">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Related_Trade_Trade1">
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="1" />
+          <End Role="Related_Trade" Type="BCATradeModel.Related_Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Related_Trade">
+              <PropertyRef Name="related_trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Relativity">
+          <End Role="Relativity" Type="BCATradeModel.Relativity" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relativity">
+              <PropertyRef Name="relativity_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="relativity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Relativity">
+          <End Role="Relativity" Type="BCATradeModel.Relativity" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Relativity">
+              <PropertyRef Name="relativity_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="relativity_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Service">
+          <End Role="Service" Type="BCATradeModel.Service" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Service">
+              <PropertyRef Name="service_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="service_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Status">
+          <End Role="Status" Type="BCATradeModel.Status" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="status_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="status" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Structure_Type">
+          <End Role="Structure_Type" Type="BCATradeModel.Structure_Type" Multiplicity="0..1" />
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Structure_Type">
+              <PropertyRef Name="structure_type_id" />
+            </Principal>
+            <Dependent Role="Trade">
+              <PropertyRef Name="structure_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Track_Record_Track_Record_Type">
+          <End Role="Track_Record_Type" Type="BCATradeModel.Track_Record_Type" Multiplicity="0..1" />
+          <End Role="Track_Record" Type="BCATradeModel.Track_Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Track_Record_Type">
+              <PropertyRef Name="track_record_type_id" />
+            </Principal>
+            <Dependent Role="Track_Record">
+              <PropertyRef Name="track_record_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Track_Record_Trade">
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="0..1" />
+          <End Role="Track_Record" Type="BCATradeModel.Track_Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Track_Record">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tradable_Thing_Tradable_Thing_Class">
+          <End Role="Tradable_Thing_Class" Type="BCATradeModel.Tradable_Thing_Class" Multiplicity="0..1" />
+          <End Role="Tradable_Thing" Type="BCATradeModel.Tradable_Thing" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tradable_Thing_Class">
+              <PropertyRef Name="tradable_thing_class_id" />
+            </Principal>
+            <Dependent Role="Tradable_Thing">
+              <PropertyRef Name="tradable_thing_class_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Tradable_Thing">
+          <End Role="Tradable_Thing" Type="BCATradeModel.Tradable_Thing" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tradable_Thing">
+              <PropertyRef Name="tradable_thing_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="tradable_thing_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Comment_Trade">
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Comment" Type="BCATradeModel.Trade_Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Comment">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Instruction_Trade">
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Instruction" Type="BCATradeModel.Trade_Instruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Instruction">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Trade">
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Performance_Trade">
+          <End Role="Trade" Type="BCATradeModel.Trade" Multiplicity="0..1" />
+          <End Role="Trade_Performance" Type="BCATradeModel.Trade_Performance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade">
+              <PropertyRef Name="trade_id" />
+            </Principal>
+            <Dependent Role="Trade_Performance">
+              <PropertyRef Name="trade_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Trade_Line_Group">
+          <End Role="Trade_Line_Group" Type="BCATradeModel.Trade_Line_Group" Multiplicity="0..1" />
+          <End Role="Trade_Line" Type="BCATradeModel.Trade_Line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade_Line_Group">
+              <PropertyRef Name="trade_line_group_id" />
+            </Principal>
+            <Dependent Role="Trade_Line">
+              <PropertyRef Name="trade_line_group_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Trade_Line_Group_Trade_Line_Group_Type">
+          <End Role="Trade_Line_Group_Type" Type="BCATradeModel.Trade_Line_Group_Type" Multiplicity="0..1" />
+          <End Role="Trade_Line_Group" Type="BCATradeModel.Trade_Line_Group" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Trade_Line_Group_Type">
+              <PropertyRef Name="trade_line_group_type_id" />
+            </Principal>
+            <Dependent Role="Trade_Line_Group">
+              <PropertyRef Name="trade_line_group_type_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BCATradeModelStoreContainer" CdmEntityContainer="BCATradeEntities1">
+          <EntitySetMapping Name="Benchmarks">
+            <EntityTypeMapping TypeName="BCATradeModel.Benchmark">
+              <MappingFragment StoreEntitySet="Benchmark">
+                <ScalarProperty Name="benchmark_id" ColumnName="benchmark_id" />
+                <ScalarProperty Name="benchmark_uri" ColumnName="benchmark_uri" />
+                <ScalarProperty Name="benchmark_code" ColumnName="benchmark_code" />
+                <ScalarProperty Name="benchmark_label" ColumnName="benchmark_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Currencies">
+            <EntityTypeMapping TypeName="BCATradeModel.Currency">
+              <MappingFragment StoreEntitySet="Currency">
+                <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+                <ScalarProperty Name="currency_uri" ColumnName="currency_uri" />
+                <ScalarProperty Name="currency_code" ColumnName="currency_code" />
+                <ScalarProperty Name="currency_symbol" ColumnName="currency_symbol" />
+                <ScalarProperty Name="currency_label" ColumnName="currency_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hedge_Type">
+            <EntityTypeMapping TypeName="BCATradeModel.Hedge_Type">
+              <MappingFragment StoreEntitySet="Hedge_Type">
+                <ScalarProperty Name="hedge_id" ColumnName="hedge_id" />
+                <ScalarProperty Name="hedge_label" ColumnName="hedge_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Instruction_Type">
+            <EntityTypeMapping TypeName="BCATradeModel.Instruction_Type">
+              <MappingFragment StoreEntitySet="Instruction_Type">
+                <ScalarProperty Name="instruction_type_id" ColumnName="instruction_type_id" />
+                <ScalarProperty Name="instruction_type_label" ColumnName="instruction_type_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Length_Type">
+            <EntityTypeMapping TypeName="BCATradeModel.Length_Type">
+              <MappingFragment StoreEntitySet="Length_Type">
+                <ScalarProperty Name="length_type_id" ColumnName="length_type_id" />
+                <ScalarProperty Name="length_type_label" ColumnName="length_type_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="BCATradeModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="location_uri" ColumnName="location_uri" />
+                <ScalarProperty Name="location_code" ColumnName="location_code" />
+                <ScalarProperty Name="location_label" ColumnName="location_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Measure_Type">
+            <EntityTypeMapping TypeName="BCATradeModel.Measure_Type">
+              <MappingFragment StoreEntitySet="Measure_Type">
+                <ScalarProperty Name="measure_type_id" ColumnName="measure_type_id" />
+                <ScalarProperty Name="measure_type_label" ColumnName="measure_type_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="BCATradeModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="position_id" ColumnName="position_id" />
+                <ScalarProperty Name="position_uri" ColumnName="position_uri" />
+                <ScalarProperty Name="position_label" ColumnName="position_label" />
+                <ScalarProperty Name="position_relativity_id" ColumnName="position_relativity_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Related_Trade">
+            <EntityTypeMapping TypeName="BCATradeModel.Related_Trade">
+              <MappingFragment StoreEntitySet="Related_Trade">
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="related_trade_id" ColumnName="related_trade_id" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Relativities">
+            <EntityTypeMapping TypeName="BCATradeModel.Relativity">
+              <MappingFragment StoreEntitySet="Relativity">
+                <ScalarProperty Name="relativity_id" ColumnName="relativity_id" />
+                <ScalarProperty Name="relativity_label" ColumnName="relativity_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Services">
+            <EntityTypeMapping TypeName="BCATradeModel.Service">
+              <MappingFragment StoreEntitySet="Service">
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="service_uri" ColumnName="service_uri" />
+                <ScalarProperty Name="service_code" ColumnName="service_code" />
+                <ScalarProperty Name="service_label" ColumnName="service_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="BCATradeModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="status_id" ColumnName="status_id" />
+                <ScalarProperty Name="status_label" ColumnName="status_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Structure_Type">
+            <EntityTypeMapping TypeName="BCATradeModel.Structure_Type">
+              <MappingFragment StoreEntitySet="Structure_Type">
+                <ScalarProperty Name="structure_type_id" ColumnName="structure_type_id" />
+                <ScalarProperty Name="structure_type_label" ColumnName="structure_type_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Track_Record">
+            <EntityTypeMapping TypeName="BCATradeModel.Track_Record">
+              <MappingFragment StoreEntitySet="Track_Record">
+                <ScalarProperty Name="track_record_id" ColumnName="track_record_id" />
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="track_record_type_id" ColumnName="track_record_type_id" />
+                <ScalarProperty Name="track_record_value" ColumnName="track_record_value" />
+                <ScalarProperty Name="track_record_date" ColumnName="track_record_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Track_Record_Type">
+            <EntityTypeMapping TypeName="BCATradeModel.Track_Record_Type">
+              <MappingFragment StoreEntitySet="Track_Record_Type">
+                <ScalarProperty Name="track_record_type_id" ColumnName="track_record_type_id" />
+                <ScalarProperty Name="track_record_type_label" ColumnName="track_record_type_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tradable_Thing">
+            <EntityTypeMapping TypeName="BCATradeModel.Tradable_Thing">
+              <MappingFragment StoreEntitySet="Tradable_Thing">
+                <ScalarProperty Name="tradable_thing_id" ColumnName="tradable_thing_id" />
+                <ScalarProperty Name="tradable_thing_uri" ColumnName="tradable_thing_uri" />
+                <ScalarProperty Name="tradable_thing_class_id" ColumnName="tradable_thing_class_id" />
+                <ScalarProperty Name="location_id" ColumnName="location_id" />
+                <ScalarProperty Name="tradable_thing_code" ColumnName="tradable_thing_code" />
+                <ScalarProperty Name="tradable_thing_label" ColumnName="tradable_thing_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tradable_Thing_Class">
+            <EntityTypeMapping TypeName="BCATradeModel.Tradable_Thing_Class">
+              <MappingFragment StoreEntitySet="Tradable_Thing_Class">
+                <ScalarProperty Name="tradable_thing_class_id" ColumnName="tradable_thing_class_id" />
+                <ScalarProperty Name="tradable_thing_class_uri" ColumnName="tradable_thing_class_uri" />
+                <ScalarProperty Name="tradable_thing_class_label" ColumnName="tradable_thing_class_label" />
+                <ScalarProperty Name="tradable_thing_class_editorial_label" ColumnName="tradable_thing_class_editorial_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trades">
+            <EntityTypeMapping TypeName="BCATradeModel.Trade">
+              <MappingFragment StoreEntitySet="Trade">
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="trade_uri" ColumnName="trade_uri" />
+                <ScalarProperty Name="relativity_id" ColumnName="relativity_id" />
+                <ScalarProperty Name="length_type_id" ColumnName="length_type_id" />
+                <ScalarProperty Name="structure_type_id" ColumnName="structure_type_id" />
+                <ScalarProperty Name="service_id" ColumnName="service_id" />
+                <ScalarProperty Name="currency_id" ColumnName="currency_id" />
+                <ScalarProperty Name="benchmark_id" ColumnName="benchmark_id" />
+                <ScalarProperty Name="trade_label" ColumnName="trade_label" />
+                <ScalarProperty Name="trade_editorial_label" ColumnName="trade_editorial_label" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trade_Comment">
+            <EntityTypeMapping TypeName="BCATradeModel.Trade_Comment">
+              <MappingFragment StoreEntitySet="Trade_Comment">
+                <ScalarProperty Name="comment_id" ColumnName="comment_id" />
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="comment_label" ColumnName="comment_label" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trade_Instruction">
+            <EntityTypeMapping TypeName="BCATradeModel.Trade_Instruction">
+              <MappingFragment StoreEntitySet="Trade_Instruction">
+                <ScalarProperty Name="trade_instruction_id" ColumnName="trade_instruction_id" />
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="relativity_id" ColumnName="relativity_id" />
+                <ScalarProperty Name="instruction_type_id" ColumnName="instruction_type_id" />
+                <ScalarProperty Name="hedge_id" ColumnName="hedge_id" />
+                <ScalarProperty Name="instruction_entry" ColumnName="instruction_entry" />
+                <ScalarProperty Name="instruction_entry_date" ColumnName="instruction_entry_date" />
+                <ScalarProperty Name="instruction_exit" ColumnName="instruction_exit" />
+                <ScalarProperty Name="instruction_exit_date" ColumnName="instruction_exit_date" />
+                <ScalarProperty Name="instruction_label" ColumnName="instruction_label" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trade_Line">
+            <EntityTypeMapping TypeName="BCATradeModel.Trade_Line">
+              <MappingFragment StoreEntitySet="Trade_Line">
+                <ScalarProperty Name="trade_line_id" ColumnName="trade_line_id" />
+                <ScalarProperty Name="trade_line_uri" ColumnName="trade_line_uri" />
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="trade_line_group_id" ColumnName="trade_line_group_id" />
+                <ScalarProperty Name="tradable_thing_id" ColumnName="tradable_thing_id" />
+                <ScalarProperty Name="position_id" ColumnName="position_id" />
+                <ScalarProperty Name="trade_line_label" ColumnName="trade_line_label" />
+                <ScalarProperty Name="trade_line_editorial_label" ColumnName="trade_line_editorial_label" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trade_Line_Group">
+            <EntityTypeMapping TypeName="BCATradeModel.Trade_Line_Group">
+              <MappingFragment StoreEntitySet="Trade_Line_Group">
+                <ScalarProperty Name="trade_line_group_id" ColumnName="trade_line_group_id" />
+                <ScalarProperty Name="trade_line_group_type_id" ColumnName="trade_line_group_type_id" />
+                <ScalarProperty Name="trade_line_group_uri" ColumnName="trade_line_group_uri" />
+                <ScalarProperty Name="trade_line_group_label" ColumnName="trade_line_group_label" />
+                <ScalarProperty Name="trade_line_group_editorial_label" ColumnName="trade_line_group_editorial_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trade_Line_Group_Type">
+            <EntityTypeMapping TypeName="BCATradeModel.Trade_Line_Group_Type">
+              <MappingFragment StoreEntitySet="Trade_Line_Group_Type">
+                <ScalarProperty Name="trade_line_group_type_id" ColumnName="trade_line_group_type_id" />
+                <ScalarProperty Name="trade_line_group_type_uri" ColumnName="trade_line_group_type_uri" />
+                <ScalarProperty Name="trade_line_group_type_label" ColumnName="trade_line_group_type_label" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Trade_Performance">
+            <EntityTypeMapping TypeName="BCATradeModel.Trade_Performance">
+              <MappingFragment StoreEntitySet="Trade_Performance">
+                <ScalarProperty Name="trade_performance_id" ColumnName="trade_performance_id" />
+                <ScalarProperty Name="trade_id" ColumnName="trade_id" />
+                <ScalarProperty Name="measure_type_id" ColumnName="measure_type_id" />
+                <ScalarProperty Name="return_apl_function" ColumnName="return_apl_function" />
+                <ScalarProperty Name="return_currency_id" ColumnName="return_currency_id" />
+                <ScalarProperty Name="return_benchmark_id" ColumnName="return_benchmark_id" />
+                <ScalarProperty Name="return_value" ColumnName="return_value" />
+                <ScalarProperty Name="return_date" ColumnName="return_date" />
+                <ScalarProperty Name="created_on" ColumnName="created_on" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="last_updated" ColumnName="last_updated" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

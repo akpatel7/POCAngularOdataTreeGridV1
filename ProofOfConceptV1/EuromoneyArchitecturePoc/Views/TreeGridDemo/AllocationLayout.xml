@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<Grid>
+  <!-- Cfg tag is splitted by attributes just for comments, you should merge them in your standard applications -->
+  <Cfg id='AllocationGrid33'/>
+  <Cfg Style='Standard'/>
+  <Cfg MainCol="Instrument" />
+  <!-- Grid identification for saving configuration to cookies -->
+  <Cfg PageLength='21'/>
+  <!-- count of rows at one page -->
+  <Colors Alternate='-10,-10,0' AlternateRepeat='3'/>
+  <!-- Every third row will have different color -->
+  <Cfg Selecting="0" Deleting="0" Adding="0" Dragging="0" Filtering="1" Filtered="1"/>
+  <!--  No row manipulation permitted  -->
+  <Cols>
+    <C Name='Service' Width='250' Type='Text'/>
+    <C Name='Instrument' Width='250' Type='Text'/>
+    <C Name='MoreInfo' Width='50'/>
+    <C Name='CurrentAllocation' Width='120' Type='Float' Format='0.###'/>
+    <C Name='PreviousAllocation' Width='120' Type='Float' Format='0.###'/>
+  </Cols>
+  <Head>
+    <Filter id="Filter1" Height="22"/>
+  </Head>
+  <Toolbar Cells="Print,ExpandAll,CollapseAll,Columns"
+ExpandAllVisibleFormula="1"
+ExpandAllOnClick="ExpandAllCells,1"
+ExpandAllTip="Expand all columns"
+CollapseAllVisibleFormula="1"
+CollapseAllOnClick="CollapseAllCells,1"
+CollapseAllTip="Collapse all columns"
+AllType="Button"
+All="Expand all columns"
+AllOnClick="ExpandAllCells OR CollapseAllCells"
+/>
+  </Grid>

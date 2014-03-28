@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Angular Performance Tests";
+}
+
+
+  <h1>Angular Performance Tests</h1>
+    <ul>
+        <li><a href="../../AngularPerformanceTests/SlowDashDemo.html">Slow Dashboard Demo</a></li>
+        <li><a href="../../AngularPerformanceTests/BindOnceSlowDashDemo.html">Slow Dashboard Demo (using the BindOnce directive)</a></li>
+        <li><a href="../../AngularPerformanceTests/QuickNgRepeatSlowDashDemo.html">Slow Dashboard Demo (using the QhickNgRepeat directive)</a></li>
+        
+        <li><a href="../../AngularPerformanceTests/FastDashDemo.html">Fast Dashboard Demo</a></li>
+        <li><a href="../../AngularPerformanceTests/SlowDashNoNestedRepeatDemo.html">Slow dashboard (no nested ng-repeat for options)</a></li>
+        <li>This test uses element.append($compile($html)(scope)) to compile all 3000 ng-show="showIt" in one go. The result is about 12 secs for the compile and render. The runtime is fast.
+            <a href="../../AngularPerformanceTests/FastDashWithCustomAngularBindingDemo.html">Fast Dashboard Demo with custom angular binding</a>
+        </li>
+        <li>This test uses scope.$watch on all 3000 combo boxes and some jquery to change the visibility - it takes about 3 seconds to render and the runtime is fast
+            <a href="../../AngularPerformanceTests/FastDashWithCustomAngularBindingV2Demo.html">Fast Dashboard Demo with custom angular binding Version 2</a>
+        </li>
+
+    </ul>

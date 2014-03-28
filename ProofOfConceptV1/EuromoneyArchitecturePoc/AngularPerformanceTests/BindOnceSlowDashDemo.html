@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="tradesApp">
+
+<head>
+
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('em-fast-dash');
+         </script>
+    <![endif]-->
+
+   <style>
+        .dash-box {
+            width: 150px;
+            float: left;
+            border: 1px solid blue;
+        }
+        .dash-box select {
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="dashController">
+        <div ng-repeat="data in getData()">
+            <div bindonce="data"  class='dash-box'>
+                <div bo-text="data.Name"></div>
+                <div bo-text="data.Value"></div>
+                <select>
+                    <option ng-repeat="dataItem in data.Children" bindonce="dataItem" bo-value="dataItem.Value"
+                         bo-text="dataItem.Display"></option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="/Scripts/jquery-1.10.2.min.js"></script>
+
+<script src="/Scripts/angular.min.js"></script>
+<script src="/Scripts/angular-resource.js"></script>
+<script src="/Scripts/bindonce.js"></script>
+
+<script src="/js/tradesApp.js"></script>
+
+<script src="/js/controllers/dashController.js"></script>
+</html>
+

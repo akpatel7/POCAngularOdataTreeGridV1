@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="tradesApp">
+
+<head>
+
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('em-fast-dash');
+         </script>
+    <![endif]-->
+
+   <style>
+        .dash-box {
+            width: 150px;
+            float: left;
+            border: 1px solid greenyellow;
+        }
+        .dash-box select {
+            width: 140px;
+        }
+    </style>
+</head>
+
+<body>
+    <div ng-controller="dashController">
+        <div quick-ng-repeat="data in list" quick-repeat-list="items">
+            <div class='dash-box'>
+                <div>{{data.Name}}</div>
+                <div>{{data.Value}}</div>
+               
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/quick-ng-repeat.js"></script>
+<script src="/Scripts/angular-resource.js"></script>
+
+<script src="/js/tradesApp.js"></script>
+
+<script src="/js/controllers/dashController.js"></script>
+</html>
+

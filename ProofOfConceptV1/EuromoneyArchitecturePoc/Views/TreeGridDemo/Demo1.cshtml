@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "TreeGrid POC 1.1";
+}
+
+<div ng-app="tradesApp">
+
+    <!--[if lte IE 8]>
+      <script>
+        document.createElement('em-allocations-grid');
+         </script>
+    <![endif]-->
+    <br/>
+    <br/>
+    <br/>
+    <div ng-controller="allocationsController">
+     
+        <em-allocations-grid moreinfocontentcalled="moreInfoContentCalled" config="allocationsGridConfig" name="demo122"></em-allocations-grid>
+
+    </div>
+    <script src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="/Scripts/angular.min.js"></script>
+    <script src="/Scripts/angular-resource.min.js"></script>
+    <script src="/Scripts/underscore.js"></script>
+    <script src="/TreeGrid/Grid/GridE.js"></script>
+    <script src="/js/tradesApp.js"></script>
+    <script src="/js/services/allocationsTreeGridBuilder.js"></script>
+    <script src="/js/services/allocationsService.js"></script>
+    <script src="/js/services/utils.js"></script>
+    <script src="/js/directives/emAllocationsGrid.js"></script>
+    <script src="/js/controllers/allocationsController.js"></script>
+</div>
+
+

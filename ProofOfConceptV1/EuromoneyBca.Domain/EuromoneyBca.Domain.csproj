@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7AC4A528-C39C-4D82-A517-34CAFC676B7E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EuromoneyBca.Domain</RootNamespace>
+    <AssemblyName>EuromoneyBca.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentMigrator">
+      <HintPath>..\packages\FluentMigrator.1.1.1.0\lib\40\FluentMigrator.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\ITradeEntitiesDataService.cs" />
+    <Compile Include="Data\Models\Benchmark.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Currency.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Hedge_Type.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Instruction_Type.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Length_Type.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Location.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Measure_Type.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Position.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Related_Trade.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Relativity.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Service.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Status.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Structure_Type.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Track_Record.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Track_Record_Type.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Tradable_Thing.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Tradable_Thing_Class.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Trade.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\TradeEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradeEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\TradeEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\TradeEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TradeEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Trade_Comment.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Trade_Instruction.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Trade_Line.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Trade_Line_Group.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Trade_Line_Group_Type.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Models\Trade_Performance.cs">
+      <DependentUpon>TradeEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TradeEntitiesDataService.cs" />
+    <Compile Include="Migrations\201312051138405_Schema.cs" />
+    <Compile Include="Migrations\201312051138405_Schema.Designer.cs">
+      <DependentUpon>201312051138405_Schema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051506530_ReferenceData.cs" />
+    <Compile Include="Migrations\201312051506530_ReferenceData.Designer.cs">
+      <DependentUpon>201312051506530_ReferenceData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051509500_ActiveTradeSummaryView.cs" />
+    <Compile Include="Migrations\201312051509500_ActiveTradeSummaryView.Designer.cs">
+      <DependentUpon>201312051509500_ActiveTradeSummaryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051513079_TradeLineSummary.cs" />
+    <Compile Include="Migrations\201312051513079_TradeLineSummary.Designer.cs">
+      <DependentUpon>201312051513079_TradeLineSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051517461_SpotCarryFunction.cs" />
+    <Compile Include="Migrations\201312051517461_SpotCarryFunction.Designer.cs">
+      <DependentUpon>201312051517461_SpotCarryFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051519120_TradeHistoryView.cs" />
+    <Compile Include="Migrations\201312051519120_TradeHistoryView.Designer.cs">
+      <DependentUpon>201312051519120_TradeHistoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051520301_LookupDataView.cs" />
+    <Compile Include="Migrations\201312051520301_LookupDataView.Designer.cs">
+      <DependentUpon>201312051520301_LookupDataView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201312051524598_LinkedTradeView.cs" />
+    <Compile Include="Migrations\201312051524598_LinkedTradeView.Designer.cs">
+      <DependentUpon>201312051524598_LinkedTradeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Migrations\MigrationConfiguration.cs" />
+    <Compile Include="Migrations\Support\AlertContext.cs" />
+    <Compile Include="Migrations\Support\FunctionalArea.cs" />
+    <Compile Include="Migrations\Support\MigrationContext.cs" />
+    <Compile Include="Migrations\Support\ResourceMigration.cs" />
+    <Compile Include="Migrations\Support\TradeContext.cs" />
+    <Compile Include="Migrations\TradeConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Data\Models\TradeEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TradeEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\Models\TradeEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TradeEntities.edmx</DependentUpon>
+      <LastGenOutput>TradeEntities.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Data\Models\TradeEntities.edmx.diagram">
+      <DependentUpon>TradeEntities.edmx</DependentUpon>
+    </None>
+    <None Include="Data\Models\TradeEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TradeEntities.edmx</DependentUpon>
+      <LastGenOutput>TradeEntities.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\Scripts\201312051138405_Schema.sql" />
+    <EmbeddedResource Include="Migrations\Scripts\201312051506530_ReferenceData.sql" />
+    <EmbeddedResource Include="Migrations\Scripts\201312051509500_ActiveTradeSummaryView.sql" />
+    <EmbeddedResource Include="Migrations\Scripts\201312051513079_TradeLineSummary.sql" />
+    <EmbeddedResource Include="Migrations\Scripts\201312051517461_SpotCarryFunction.sql" />
+    <EmbeddedResource Include="Migrations\Scripts\201312051519120_TradeHistoryView.sql" />
+    <EmbeddedResource Include="Migrations\Scripts\201312051520301_LookupDataView.sql" />
+    <EmbeddedResource Include="Migrations\Scripts\201312051524598_LinkedTradeView.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201312051138405_Schema.resx">
+      <DependentUpon>201312051138405_Schema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051506530_ReferenceData.resx">
+      <DependentUpon>201312051506530_ReferenceData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051509500_ActiveTradeSummaryView.resx">
+      <DependentUpon>201312051509500_ActiveTradeSummaryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051513079_TradeLineSummary.resx">
+      <DependentUpon>201312051513079_TradeLineSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051517461_SpotCarryFunction.resx">
+      <DependentUpon>201312051517461_SpotCarryFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051519120_TradeHistoryView.resx">
+      <DependentUpon>201312051519120_TradeHistoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051520301_LookupDataView.resx">
+      <DependentUpon>201312051520301_LookupDataView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201312051524598_LinkedTradeView.resx">
+      <DependentUpon>201312051524598_LinkedTradeView.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
